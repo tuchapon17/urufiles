@@ -1,8 +1,24 @@
 ﻿# Host: 127.0.0.1  (Version: 5.0.51b-community-nt-log)
-# Date: 2014-04-24 01:27:07
+# Date: 2014-04-24 22:44:17
 # Generator: MySQL-Front 5.3  (Build 4.120)
 
 /*!40101 SET NAMES utf8 */;
+
+#
+# Structure for table "tb_files"
+#
+
+DROP TABLE IF EXISTS `tb_files`;
+CREATE TABLE `tb_files` (
+  `files_id` int(11) NOT NULL auto_increment,
+  `files_name` varchar(255) NOT NULL,
+  PRIMARY KEY  (`files_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "tb_files"
+#
+
 
 #
 # Structure for table "tb_sex"
@@ -37,6 +53,8 @@ CREATE TABLE `tb_user` (
   `user_register_on` datetime NOT NULL,
   `tb_sex_id` varchar(1) NOT NULL,
   `user_status` varchar(1) NOT NULL default '0',
+  `user_office` varchar(50) NOT NULL,
+  `user_address` text NOT NULL,
   PRIMARY KEY  (`user_username`),
   UNIQUE KEY `user_username_UNIQUE` (`user_username`),
   KEY `fk_tb_user_tb_sex1_idx` (`tb_sex_id`),
@@ -47,4 +65,4 @@ CREATE TABLE `tb_user` (
 # Data for table "tb_user"
 #
 
-INSERT INTO `tb_user` VALUES ('aaaaa','e10adc3949ba59abbe56e057f20f883e','tt@gg.com','aaa','aaa','0888888888','2014-04-24 01:09:43','1','1');
+INSERT INTO `tb_user` VALUES ('admin','0a7aa8c8e3e17c502ad00cb2d18c8278','e_za_17@hotmail.com','ผู้ดูแล','เว็บไซต์','0881515680','2014-04-24 22:41:21','1','2','มรอ.','อุตรดิตถ์');
