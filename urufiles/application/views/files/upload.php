@@ -22,13 +22,13 @@ echo $navbar;
 					<div class="panel-body">
 				    	<form  role="form" action="" method="post" id="UploadForm" enctype="multipart/form-data" autocomplete="off">
 				    		<input type="hidden" name="hidden">
-							<div class="form-group">
+							<div class="form-group col-lg-6 col-lg-offset-3">
 								<label  for="InputFiles">เลือกไฟล์</label>
 								<input type="file" name="InputFiles[]" multiple="" id="InputFiles">
 								<span class="help-block">สามารถอัพโหลดพร้อมกันได้หลายไฟล์</span>
 							</div><!-- @form-group -->
 							<div class="form-group text-right">
-		  						<button type="submit" class="btn btn-primary">ยืนยัน</button>
+		  						<button type="submit" class="btn btn-primary col-lg-6 col-lg-offset-3"><i class="fa fa-upload fa-2x"></i></button>
 		  					</div>
 				      	</form>
 		      		</div><!-- @panel-body -->

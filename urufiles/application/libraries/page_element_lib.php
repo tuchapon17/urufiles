@@ -55,7 +55,7 @@ class Page_element_lib
 		    <meta name="author" content="">
 		    <title>'.$title.'</title>
 			<link rel="stylesheet" href="'.base_url().'plugins/bootstrap/3.1.1/css/bootstrap.min.css">
-			<link rel="stylesheet" href="'.base_url().'plugins/bootstrap/3.1.1/css/bootstrap_spacelab_theme.min.css">
+			<link rel="stylesheet" href="'.base_url().'plugins/bootstrap/3.1.1/css/space_lab_theme/bootstrap_spacelab_theme.css">
 			<link href="'.base_url().'plugins/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
     		<style>
 				body {
