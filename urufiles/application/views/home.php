@@ -13,18 +13,13 @@ echo $navbar;
 <!-- Custom Content -->
 	<div class="jumbotron">
       <div class="container">
-        <h2>ระบบ</h2>
+        <h2></h2>
         <p></p>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
-      
-      
-	  
-	  
-      
       <hr>
 
       <?php echo $footer;?>

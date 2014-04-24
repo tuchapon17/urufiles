@@ -60,12 +60,26 @@ echo $navbar;
     							<label for="SelectSex">เพศ</label>
     							<select class="form-control" id="SelectSex" name="SelectSex">
     								<option value="">กรุณาระบุเพศ</option>
-    								<option value="1">ชาย</option>
-    								<option value="2">หญิง</option>
-    								<option value="3">อื่นๆ</option>
+    								<?php
+    									foreach($data_sex_list as $sex)
+    									{
+    										echo '<option value="'.$sex["sex_id"].'">'.$sex["sex_name"].'</option>';
+    									}
+    								?>
     							</select>
     							<span class="help-block"></span>
   							</div><!-- @form-group -->
+  							<div class="form-group">
+    							<label for="InputOffice">สถานที่ทำงาน</label>
+    							<input type="text" class="form-control" id="InputOffice" name="InputOffice" placeholder="" maxlength="50">
+    							<span class="help-block"></span>
+  							</div><!-- @form-group -->
+  							<div class="form-group">
+    							<label for="InputAddress">ที่อยู่</label>
+    							<textarea class="form-control" id="InputAddress" name="InputAddress" ></textarea>
+    							<span class="help-block"></span>
+  							</div><!-- @form-group -->
+  							
   							<div class="form-group text-right">
   								<button type="submit" class="btn btn-primary">ยืนยัน</button>
   							</div>
@@ -184,6 +198,13 @@ echo $js;
 					minlength:9
 				},
 				"SelectSex":{
+					required:true
+				},
+				"InputOffice":{
+					required:true,
+					maxlength:50
+				},
+				"InputAddress":{
 					required:true
 				}
 			},

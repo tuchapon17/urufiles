@@ -56,6 +56,7 @@ class Page_element_lib
 		    <title>'.$title.'</title>
 			<link rel="stylesheet" href="'.base_url().'plugins/bootstrap/3.1.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="'.base_url().'plugins/bootstrap/3.1.1/css/bootstrap_spacelab_theme.min.css">
+			<link href="'.base_url().'plugins/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
     		<style>
 				body {
 					padding-top: 50px;
@@ -129,20 +130,20 @@ class Page_element_lib
 				
 	        <div id="navbar-main" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="dropdown">
-	              <a id="dropdown1" href="#" data-toggle="dropdown" class="dropdown-toggle">dropdown1 <span class="caret"></span></a>
-	              <ul aria-labelledby="dropdown1" class="dropdown-menu">
-	                <li><a href="#">Default</a></li>
-	                <li class="divider"></li>
-	                <li><a href="#">Amelia</a></li>
-	                <li><a href="#">Cerulean</a></li>
-	              </ul>
-	            </li>
 	            <li>
-	              <a href="#">test</a>
+	              <a href="'.base_url().'?c=files">รายการไฟล์</a>
 	            </li>
+	           ';
+			if($this->ci->session->userdata("user_status") == "2")
+			{
+				$html.='
+		            <li>
+		              <a href="'.base_url().'?c=files&m=upload">อัพโหลดไฟล์</a>
+		            </li>
+		        ';
+			}
+	        $html.='
 	          </ul>
-	
 	          <ul class="nav navbar-nav navbar-right">
 	          ';
 				if(!$this->ci->session->userdata("uf_username"))

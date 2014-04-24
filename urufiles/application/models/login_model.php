@@ -19,15 +19,16 @@ class Login_model extends MY_Model
 				"user_username"=>$username,
 				"user_password"=>md5($password)
 		);
-		$this->db->select("user_username")->from("tb_user")->where($where)->where("user_status !=","0")->limit(1);
+		$this->db->select()->from("tb_user")->where($where)->limit(1);
 		$query = $this->db->get();
-	
+		
 		if($query->num_rows()===1)
 		{
-			$r = $query->row();
+			$r = $query->result_array();
 			//set session
 			$set_session=array(
-					"uf_username"=>$r->user_username
+					"uf_username"=>$r[0]["user_username"],
+					"user_status"=>$r[0]["user_status"]
 			);
 			$this->session->set_userdata($set_session);
 			return true;

@@ -59,6 +59,16 @@ class Register extends MY_Controller
 						"field"=>"SelectSex",
 						"label"=>"เพศ",
 						"rules"=>"required"
+				),
+				array(
+						"field"=>"InputOffice",
+						"label"=>"สถานที่ทำงาน",
+						"rules"=>"required|max_length[50]"
+				),
+				array(
+						"field"=>"InputAddress",
+						"label"=>"ที่อยู่",
+						"rules"=>"required"
 				)
 		);
 		$this->frm->set_rules($config);
@@ -73,7 +83,8 @@ class Register extends MY_Controller
 					"js"=>$this->pel->js(),
 					"footer"=>$this->pel->footer(),
 					"bodyclose"=>$this->pel->body("0"),
-					"htmlclose"=>$this->pel->html("0")
+					"htmlclose"=>$this->pel->html("0"),
+					"data_sex_list"=>$this->rm->get_sex_list()
 			);
 			$this->load->view("register",$data);
 		}

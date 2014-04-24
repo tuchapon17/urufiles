@@ -54,6 +54,8 @@ echo $js;
 	<script type="text/javascript">
 	<!--
 	$(function(){
+		$("#InputUsername").focus();
+		
 		/**
 		Show bootbox alert(confirm) after passed form validation
 		*/

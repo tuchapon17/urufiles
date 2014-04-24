@@ -35,6 +35,8 @@ class Register_Model extends MY_Model
 		$lastname = $this->input->post("InputLastname");
 		$phone = $this->input->post("InputPhone");
 		$sex = $this->input->post("SelectSex");
+		$office = $this->input->post("InputOffice");
+		$address = $this->input->post("InputAddress");
 		$data=array(
 				"user_username"=>strtolower($username),
 				"user_password"=>$password,
@@ -44,6 +46,8 @@ class Register_Model extends MY_Model
 				"user_lastname"=>$lastname,
 				"user_phone"=>$phone,
 				"tb_sex_id"=>$sex,
+				"user_office"=>$office,
+				"user_address"=>$address,
 				"user_status"=>"1"
 		);
 		//inserting user data
@@ -62,4 +66,13 @@ class Register_Model extends MY_Model
 		redirect(base_url()."?c=register");
 		endif;
 	}
+	
+	/**
+	 * 
+	 */
+	public function get_sex_list()
+	{
+		$this->db->select()->from("tb_sex");
+		return $this->db->get()->result_array();
+	} 
 }
